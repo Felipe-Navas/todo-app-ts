@@ -1,5 +1,7 @@
+import { useReducer } from 'react'
 import { TodoState } from '../interfaces/interfaces'
 import { TodoContext } from './TodoContext'
+import { todoReducer } from './todoReducer'
 
 const INITIAL_STATE: TodoState = {
   todoCount: 2,
@@ -11,7 +13,7 @@ const INITIAL_STATE: TodoState = {
     },
     {
       id: '2',
-      desc: 'Create a Node app',
+      desc: 'Install a Node app',
       completed: false,
     },
   ],
@@ -23,8 +25,18 @@ interface props {
 }
 
 export const TodoProvider = ({ children }: props) => {
+  const [todoState, dispatch] = useReducer(todoReducer, INITIAL_STATE)
 
+  const toggleTodo = (id: string) => {
+    dispatch({
+      type: 'TOGGLE_TODO',
+      payload: { id },
+    })
+  }
 
-
-  return <TodoContext.Provider value={{}}>{children}</TodoContext.Provider>
+  return (
+    <TodoContext.Provider value={{ todoState, toggleTodo }}>
+      {children}
+    </TodoContext.Provider>
+  )
 }
