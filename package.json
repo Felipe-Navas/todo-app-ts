@@ -1,5 +1,6 @@
 {
   "name": "todo-app-ts",
+  "homepage": "https://Felipe-Navas.github.io/todo-app-ts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
