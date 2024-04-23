@@ -1,8 +1,18 @@
 {
   "name": "todo-app-ts",
   "homepage": "https://Felipe-Navas.github.io/todo-app-ts",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A React app of todo's",
+  "main": "/src/index.tsx",
+  "author": "Felipe Navas",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Felipe-Navas/todo-app-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Felipe-Navas/todo-app-ts/issues"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -40,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
